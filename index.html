@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yed Francois Y. Cagang — Full-Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo">yed<span>.</span>cagang<span>()</span></div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">about</a>
+      <a href="#skills">skills</a>
+      <a href="#projects">projects</a>
+      <a href="#systems">systems</a>
+      <a href="#experience">experience</a>
+      <a href="#contact">contact</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> OPEN TO NEW OPPORTUNITIES</div>
+      <h1>Fresh graduate.<br>Building things that <span class="accent">already ship.</span></h1>
+      <p class="lede">I'm Yed Francois Y. Cagang, a BSIT graduate and full-stack web developer who's been freelancing and building real projects long before the diploma caught up.</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View projects</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+    </div>
+
+    <div class="terminal">
+      <div class="terminal-bar">
+        <span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span>
+        <span class="terminal-title">whoami.sh</span>
+      </div>
+      <div class="terminal-body" id="terminalBody">
+        <div class="line"><span class="prompt">$</span> <span id="typed-line"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-label"><span class="path">~/about</span> // who's writing this</div>
+    <h2>A little context.</h2>
+    <div class="about-grid">
+      <div>
+        <p>I just finished my BSIT degree, but I didn't wait for graduation to start building. Through freelance work, I've shipped real products for real clients — handling everything from the database to the last pixel.</p>
+        <p>I care most about the parts users never see: clean data models, sane error states, and code the next person can actually read. I treat every freelance project like it's the one that proves I'm ready.</p>
+        <p>Outside of client work, I'm usually breaking something on purpose just to understand how it works.</p>
+      </div>
+      <div>
+        <p class="mono" style="color:var(--mint); font-size:13px; margin-bottom:14px;">// current stack</p>
+        <div class="stack-list">
+          <div class="stack-item">Python</div>
+          <div class="stack-item">JavaScript</div>
+          <div class="stack-item">PHP</div>
+          <div class="stack-item">React</div>
+          <div class="stack-item">Laravel</div>
+          <div class="stack-item">Node.js</div>
+          <div class="stack-item">MySQL</div>
+          <div class="stack-item">MongoDB</div>
+          <div class="stack-item">YOLOv8</div>
+          <div class="stack-item">Raspberry Pi <span class="dim">/ ESP32</span></div>
+          <div class="stack-item">Git <span class="dim">/ GitHub</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="skills">
+  <div class="container">
+    <div class="section-label"><span class="path">~/skills</span> // proficiency by category</div>
+    <h2>Skills.</h2>
+
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3 class="skill-group-title">Programming Languages</h3>
+        <div class="skill-bar" data-level="92"><div class="skill-bar-head"><span>Python</span><span class="skill-pct">92%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="86"><div class="skill-bar-head"><span>PHP</span><span class="skill-pct">86%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="90"><div class="skill-bar-head"><span>JavaScript</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="78"><div class="skill-bar-head"><span>Java</span><span class="skill-pct">78%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+      </div>
+
+      <div class="skill-group">
+        <h3 class="skill-group-title">Web Development</h3>
+        <div class="skill-bar" data-level="95"><div class="skill-bar-head"><span>HTML</span><span class="skill-pct">95%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="92"><div class="skill-bar-head"><span>CSS</span><span class="skill-pct">92%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="82"><div class="skill-bar-head"><span>Bootstrap</span><span class="skill-pct">82%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="88"><div class="skill-bar-head"><span>React</span><span class="skill-pct">88%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="84"><div class="skill-bar-head"><span>Laravel</span><span class="skill-pct">84%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+      </div>
+
+      <div class="skill-group">
+        <h3 class="skill-group-title">Databases</h3>
+        <div class="skill-bar" data-level="87"><div class="skill-bar-head"><span>MySQL</span><span class="skill-pct">87%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="75"><div class="skill-bar-head"><span>PostgreSQL</span><span class="skill-pct">75%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+      </div>
+
+      <div class="skill-group">
+        <h3 class="skill-group-title">AI &amp; Computer Vision</h3>
+        <div class="skill-bar" data-level="88"><div class="skill-bar-head"><span>YOLOv8</span><span class="skill-pct">88%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="90"><div class="skill-bar-head"><span>Computer Vision</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="80"><div class="skill-bar-head"><span>Edge TPU</span><span class="skill-pct">80%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="74"><div class="skill-bar-head"><span>TensorFlow</span><span class="skill-pct">74%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+      </div>
+
+      <div class="skill-group">
+        <h3 class="skill-group-title">Tools &amp; Platforms</h3>
+        <div class="skill-bar" data-level="92"><div class="skill-bar-head"><span>Git</span><span class="skill-pct">92%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="93"><div class="skill-bar-head"><span>GitHub</span><span class="skill-pct">93%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="96"><div class="skill-bar-head"><span>VS Code</span><span class="skill-pct">96%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="85"><div class="skill-bar-head"><span>Google Colab</span><span class="skill-pct">85%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="81"><div class="skill-bar-head"><span>Raspberry Pi</span><span class="skill-pct">81%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-label"><span class="path">~/projects</span> // click a card to expand</div>
+    <h2>Selected work.</h2>
+
+    <div class="projects">
+      <div class="project-card"
+           data-detail="A task management system for organizing assignments, tracking deadlines, and monitoring progress across student work. Includes assignment and deadline tracking, task progress monitoring, status updates and reminders, and a dashboard for workload visibility."
+           data-repo="https://github.com/Darkaxis/20241_T145_COLLEGIANER-TASK-MANAGEMENT-SYSTEM">
+        <div>
+          <div class="project-top">
+            <h3>Collegianer Task Management System</h3>
+            <span class="project-status">Completed</span>
+          </div>
+          <p>A task management system for organizing assignments, tracking deadlines, and monitoring progress across student work.</p>
+          <div class="project-tags">
+            <span class="tag">react</span>
+            <span class="tag">laravel</span>
+            <span class="tag">mysql</span>
+            <span class="tag">tasktracking</span>
+          </div>
+          <div class="project-detail">
+            <p class="detail-text"></p>
+            <a class="repo-link" href="#" target="_blank" rel="noopener">View on GitHub →</a>
+          </div>
+        </div>
+        <div class="project-arrow">→</div>
+      </div>
+
+      <div class="project-card"
+           data-detail="A Laravel-based system for veterinary records, appointment workflows, and clinic management with secure access control. Includes authentication and authorization, pet/client/appointment management, clean admin workflows, and structured data access and reporting."
+           data-repo="https://github.com/Sedrick010/Vet-Clinic-Management-System/tree/INTEGRATION">
+        <div>
+          <div class="project-top">
+            <h3>Vet Clinic Management System</h3>
+            <span class="project-status">Completed</span>
+          </div>
+          <p>A Laravel-based system for veterinary records, appointment workflows, and clinic management with secure access control.</p>
+          <div class="project-tags">
+            <span class="tag">laravel</span>
+            <span class="tag">mysql</span>
+            <span class="tag">authentication</span>
+            <span class="tag">rbac</span>
+          </div>
+          <div class="project-detail">
+            <p class="detail-text"></p>
+            <a class="repo-link" href="#" target="_blank" rel="noopener">View on GitHub →</a>
+          </div>
+        </div>
+        <div class="project-arrow">→</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="systems">
+  <div class="container">
+    <div class="section-label"><span class="path">~/systems</span> // click a diagram to enlarge</div>
+    <h2>System designs.</h2>
+    <p class="systems-note">A few client projects are under NDA, so the codebases aren't public. These are the system and architecture designs I can share — click any image for a closer look.</p>
+
+    <div class="systems-grid">
+
+      <div class="system-card"
+           data-images="diagrams/v1.png, diagrams/v2.png, diagrams/v3.png"
+           data-title="Vet Clinic Management System — Laravel Architecture"
+           data-caption="A Laravel-based system for veterinary records, appointment workflows, and clinic management with secure access control. Features: authentication and authorization · pet, client, and appointment management · clean admin workflows · structured data access and reporting.">
+        <img src="diagrams/v1.png" alt="Vet Clinic Management System Laravel architecture diagram">
+        <div class="system-info">
+          <h3>Vet Clinic Management System</h3>
+          <span class="system-tag">laravel · mysql · rbac</span>
+        </div>
+      </div>
+
+      <div class="system-card"
+           data-images="diagrams/amu1.png, diagrams/amu2.png, diagrams/amu3.png"
+           data-title="Academic Mentoring System"
+           data-caption="A system designed to support academic mentoring workflows — connecting students with mentors, tracking sessions, and monitoring academic progress.">
+        <img src="diagrams/amu1.png" alt="Academic Mentoring System design">
+        <div class="system-info">
+          <h3>Academic Mentoring System</h3>
+          <span class="system-tag">system design</span>
+        </div>
+      </div>
+
+      <div class="system-card"
+           data-images="diagrams/apostle4.png, diagrams/apostle3.png, diagrams/apostle2.png, diagrams/apostle1.png"
+           data-title="Life Plan Insurance System"
+           data-caption="A system for managing life plan insurance policies, client records, and coverage tracking with structured data workflows.">
+        <img src="diagrams/apostle4.png" alt="Life Plan Insurance System design">
+        <div class="system-info">
+          <h3>Life Plan Insurance</h3>
+          <span class="system-tag">system design</span>
+        </div>
+      </div>
+
+       <div class="system-card"
+           data-images="diagrams/crib.png, diagrams/crib1.png, diagrams/crib2.png, diagrams/crib3.png"
+           data-title="Smart Baby Crib"
+           data-caption="An IoT-based smart baby crib system that monitors a toddler's safety using AI-powered object detection and real-time notifications, helping caregivers prevent climb-out accidents and respond promptly to crying events.">
+        <img src="diagrams/crib.png" alt="Smart Baby Crib System design">
+        <div class="system-info">
+          <h3>Smart Baby Crib</h3>
+          <span class="system-tag">system design</span>
+        </div>
+      </div>
+
+      <div class="system-card"
+           data-images="diagrams/c2.png, diagrams/c1.png, diagrams/c3.png, diagrams/c5.png"
+           data-title="Collegianer Task Management System — React + Laravel Architecture"
+           data-caption="A task management system for organizing assignments, tracking deadlines, and monitoring progress across student work. Features: assignment and deadline tracking · task progress monitoring · status updates and reminders · dashboard for workload visibility.">
+        <img src="diagrams/c2.png" alt="Collegianer Task Management System architecture diagram">
+        <div class="system-info">
+          <h3>Collegianer Task Management System</h3>
+          <span class="system-tag">react · laravel · mysql</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- lightbox carousel -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+  <div class="lightbox-content">
+    <div class="carousel">
+      <button class="carousel-btn prev" id="carouselPrev" aria-label="Previous">‹</button>
+      <div class="carousel-track-wrap">
+        <div class="carousel-track" id="carouselTrack"></div>
+      </div>
+      <button class="carousel-btn next" id="carouselNext" aria-label="Next">›</button>
+    </div>
+    <div class="lightbox-meta">
+      <div class="lightbox-text">
+        <h3 id="lightboxTitle"></h3>
+        <p id="lightboxCaption"></p>
+      </div>
+      <div class="carousel-counter" id="carouselCounter"></div>
+    </div>
+    <div class="carousel-dots" id="carouselDots"></div>
+  </div>
+</div>
+
+<section class="section" id="experience">
+  <div class="container">
+    <div class="section-label"><span class="path">~/experience</span> // where I've worked</div>
+    <h2>Experience.</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-meta">2025 — PRESENT</div>
+        <h3>Freelance Full-Stack Developer</h3>
+        <p>Working directly with small businesses and startups to design and build web applications — from initial scoping calls to deployment. Handled everything from database design to client communication on each engagement.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-meta">2024 — 2025</div>
+        <h3>Capstone Project Lead, BSIT Program</h3>
+        <p>Led a 4-person team building a full-stack web system as our thesis project — from requirements gathering to final defense. Took ownership of the backend architecture and database design.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-meta">2022 — 2025</div>
+        <h3>BS Information Technology</h3>
+        <p>Spent my degree building things on the side rather than just studying for it — personal projects, freelance gigs, and a growing habit of shipping code instead of just writing it for class.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container">
+    <div class="contact-box">
+      <h2>Let's build something.</h2>
+      <p>Open to freelance projects, entry-level full-time roles, and the occasional weird idea.</p>
+      <div class="contact-links">
+        <button class="btn btn-primary" id="copyEmailBtn">Copy email</button>
+        <a href="#" class="btn btn-ghost">GitHub</a>
+        <a href="#" class="btn btn-ghost">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  built with html, css &amp; a little javascript — © 2026 yed francois y. cagang
+</footer>
+
+<div class="copied-toast" id="copiedToast">✓ Copied yed.cagang@email.com to clipboard</div>
+
+<script>
+  // mobile menu toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // typing effect in terminal
+  const fullText = "whoami";
+  const typedEl = document.getElementById('typed-line');
+  const terminalBody = document.getElementById('terminalBody');
+  let i = 0;
+
+  function typeChar(){
+    if(i < fullText.length){
+      typedEl.textContent += fullText.charAt(i);
+      i++;
+      setTimeout(typeChar, 90);
+    } else {
+      setTimeout(showOutput, 400);
+    }
+  }
+
+  function showOutput(){
+    typedEl.style.borderRight = 'none';
+    const outputLines = [
+      { cls: 'out', text: 'yed francois y. cagang' },
+      { cls: 'out', text: 'bsit graduate · full-stack developer' },
+      { cls: 'out', text: 'stack: typescript, react, node, postgres' },
+      { cls: 'key', text: 'status: open to new opportunities ✓' }
+    ];
+    let delay = 200;
+    outputLines.forEach(line => {
+      setTimeout(() => {
+        const div = document.createElement('div');
+        div.className = 'line ' + line.cls;
+        div.textContent = line.text;
+        terminalBody.appendChild(div);
+      }, delay);
+      delay += 350;
+    });
+  }
+
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    typedEl.textContent = fullText;
+    showOutput();
+  } else {
+    typeChar();
+  }
+
+  // skill bar animation on scroll
+  const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.querySelectorAll('.skill-bar').forEach(bar => {
+          const fill = bar.querySelector('.skill-fill');
+          const level = bar.dataset.level;
+          setTimeout(() => { fill.style.width = level + '%'; }, 100);
+        });
+        skillObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  const skillsGrid = document.querySelector('.skills-grid');
+  if(skillsGrid) skillObserver.observe(skillsGrid);
+
+  // expandable project cards
+  document.querySelectorAll('.project-card').forEach(card => {
+    const repoLink = card.querySelector('.repo-link');
+    if(repoLink && card.dataset.repo){
+      repoLink.href = card.dataset.repo;
+      // clicking the GitHub link should open the repo, not toggle the card
+      repoLink.addEventListener('click', e => e.stopPropagation());
+    }
+
+    card.addEventListener('click', () => {
+      const detail = card.querySelector('.project-detail');
+      const detailText = card.querySelector('.detail-text');
+      const wasOpen = card.classList.contains('open');
+      document.querySelectorAll('.project-card.open').forEach(c => {
+        c.classList.remove('open');
+      });
+      if(!wasOpen){
+        card.classList.add('open');
+        detailText.textContent = card.dataset.detail;
+      }
+    });
+  });
+
+  // system design lightbox carousel
+  const lightbox = document.getElementById('lightbox');
+  const lightboxTitle = document.getElementById('lightboxTitle');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxClose = document.getElementById('lightboxClose');
+  const carouselTrack = document.getElementById('carouselTrack');
+  const carouselDots = document.getElementById('carouselDots');
+  const carouselCounter = document.getElementById('carouselCounter');
+  const carouselPrev = document.getElementById('carouselPrev');
+  const carouselNext = document.getElementById('carouselNext');
+
+  let currentIndex = 0;
+  let images = [];
+
+  function buildCarousel(imgs){
+    images = imgs;
+    carouselTrack.innerHTML = '';
+    carouselDots.innerHTML = '';
+    imgs.forEach((src, i) => {
+      const img = document.createElement('img');
+      img.src = src.trim();
+      img.alt = 'System design image ' + (i + 1);
+      carouselTrack.appendChild(img);
+
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot';
+      dot.setAttribute('aria-label', 'Go to image ' + (i + 1));
+      dot.addEventListener('click', () => goTo(i));
+      carouselDots.appendChild(dot);
+    });
+    goTo(0);
+  }
+
+  function goTo(index){
+    currentIndex = index;
+    carouselTrack.style.transform = `translateX(-${index * 100}%)`;
+    document.querySelectorAll('.carousel-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === index);
+    });
+    carouselCounter.textContent = images.length > 1 ? `${index + 1} / ${images.length}` : '';
+    carouselPrev.style.display = images.length > 1 ? 'flex' : 'none';
+    carouselNext.style.display = images.length > 1 ? 'flex' : 'none';
+    carouselDots.style.display = images.length > 1 ? 'flex' : 'none';
+  }
+
+  carouselPrev.addEventListener('click', () => goTo((currentIndex - 1 + images.length) % images.length));
+  carouselNext.addEventListener('click', () => goTo((currentIndex + 1) % images.length));
+
+  document.querySelectorAll('.system-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const imgs = card.dataset.images.split(',');
+      buildCarousel(imgs);
+      lightboxTitle.textContent = card.dataset.title;
+      lightboxCaption.textContent = card.dataset.caption;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  // keyboard navigation
+  document.addEventListener('keydown', e => {
+    if(!lightbox.classList.contains('open')) return;
+    if(e.key === 'Escape') closeLightbox();
+    if(e.key === 'ArrowLeft') goTo((currentIndex - 1 + images.length) % images.length);
+    if(e.key === 'ArrowRight') goTo((currentIndex + 1) % images.length);
+  });
+
+  function closeLightbox(){
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', e => { if(e.target === lightbox) closeLightbox(); });
+
+  // copy email button
+  document.getElementById('copyEmailBtn').addEventListener('click', () => {
+    const email = 'yed.cagang@email.com';
+    navigator.clipboard.writeText(email).catch(() => {});
+    const toast = document.getElementById('copiedToast');
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2200);
+  });
+</script>
+
+</body>
+</html>
