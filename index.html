@@ -10,16 +10,26 @@
 </head>
 <body>
 
-<nav>
+<!-- ambient commit-graph background (signature element) -->
+<div class="commit-graph" id="commitGraph" aria-hidden="true"></div>
+
+<!-- scroll progress bar -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- cursor glow -->
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<nav id="mainNav">
   <div class="nav-inner">
-    <div class="logo">yed<span>.</span>cagang<span>()</span></div>
+    <div class="logo" id="logoMark">yed<span>.</span>cagang<span>()</span></div>
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
     <div class="nav-links" id="navLinks">
       <a href="#about">about</a>
-      <a href="#skills">skills</a>
       <a href="#projects">projects</a>
       <a href="#systems">systems</a>
+      <a href="#skills">skills</a>
       <a href="#experience">experience</a>
+      <a href="#certificates">certificates</a>
       <a href="#contact">contact</a>
     </div>
   </div>
@@ -32,15 +42,16 @@
       <h1>Fresh graduate.<br>Building things that <span class="accent">already ship.</span></h1>
       <p class="lede">I'm Yed Francois Y. Cagang, a BSIT graduate and full-stack web developer who's been freelancing and building real projects long before the diploma caught up.</p>
       <div class="hero-cta">
-        <a href="#projects" class="btn btn-primary">View projects</a>
-        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+        <a href="#projects" class="btn btn-primary magnetic">View projects</a>
+        <a href="#contact" class="btn btn-ghost magnetic">Get in touch</a>
       </div>
     </div>
 
-    <div class="terminal">
+    <div class="terminal" id="terminalEl">
       <div class="terminal-bar">
         <span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span>
         <span class="terminal-title">whoami.sh</span>
+        <span class="terminal-badge"><span class="b-dot"></span>live</span>
       </div>
       <div class="terminal-body" id="terminalBody">
         <div class="line"><span class="prompt">$</span> <span id="typed-line"></span></div>
@@ -49,19 +60,20 @@
   </div>
 </section>
 
+
 <section class="section" id="about">
   <div class="container">
-    <div class="section-label"><span class="path">~/about</span> // who's writing this</div>
-    <h2>A little context.</h2>
+    <div class="section-label reveal"><span class="path">~/about</span> // who's writing this</div>
+    <h2 class="reveal">A little context.</h2>
     <div class="about-grid">
-      <div>
+      <div class="reveal-left">
         <p>I just finished my BSIT degree, but I didn't wait for graduation to start building. Through freelance work, I've shipped real products for real clients — handling everything from the database to the last pixel.</p>
         <p>I care most about the parts users never see: clean data models, sane error states, and code the next person can actually read. I treat every freelance project like it's the one that proves I'm ready.</p>
         <p>Outside of client work, I'm usually breaking something on purpose just to understand how it works.</p>
       </div>
-      <div>
+      <div class="reveal-right">
         <p class="mono" style="color:var(--mint); font-size:13px; margin-bottom:14px;">// current stack</p>
-        <div class="stack-list">
+        <div class="stack-list reveal-stagger">
           <div class="stack-item">Python</div>
           <div class="stack-item">JavaScript</div>
           <div class="stack-item">PHP</div>
@@ -79,62 +91,13 @@
   </div>
 </section>
 
-<section class="section" id="skills">
-  <div class="container">
-    <div class="section-label"><span class="path">~/skills</span> // proficiency by category</div>
-    <h2>Skills.</h2>
-
-    <div class="skills-grid">
-      <div class="skill-group">
-        <h3 class="skill-group-title">Programming Languages</h3>
-        <div class="skill-bar" data-level="92"><div class="skill-bar-head"><span>Python</span><span class="skill-pct">92%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
-        <div class="skill-bar" data-level="86"><div class="skill-bar-head"><span>PHP</span><span class="skill-pct">86%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
-        <div class="skill-bar" data-level="90"><div class="skill-bar-head"><span>JavaScript</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
-        <div class="skill-bar" data-level="78"><div class="skill-bar-head"><span>Java</span><span class="skill-pct">78%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
-      </div>
-
-      <div class="skill-group">
-        <h3 class="skill-group-title">Web Development</h3>
-        <div class="skill-bar" data-level="95"><div class="skill-bar-head"><span>HTML</span><span class="skill-pct">95%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
-        <div class="skill-bar" data-level="92"><div class="skill-bar-head"><span>CSS</span><span class="skill-pct">92%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
-        <div class="skill-bar" data-level="82"><div class="skill-bar-head"><span>Bootstrap</span><span class="skill-pct">82%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
-        <div class="skill-bar" data-level="88"><div class="skill-bar-head"><span>React</span><span class="skill-pct">88%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
-        <div class="skill-bar" data-level="84"><div class="skill-bar-head"><span>Laravel</span><span class="skill-pct">84%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
-      </div>
-
-      <div class="skill-group">
-        <h3 class="skill-group-title">Databases</h3>
-        <div class="skill-bar" data-level="87"><div class="skill-bar-head"><span>MySQL</span><span class="skill-pct">87%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
-        <div class="skill-bar" data-level="75"><div class="skill-bar-head"><span>PostgreSQL</span><span class="skill-pct">75%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
-      </div>
-
-      <div class="skill-group">
-        <h3 class="skill-group-title">AI &amp; Computer Vision</h3>
-        <div class="skill-bar" data-level="88"><div class="skill-bar-head"><span>YOLOv8</span><span class="skill-pct">88%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
-        <div class="skill-bar" data-level="90"><div class="skill-bar-head"><span>Computer Vision</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
-        <div class="skill-bar" data-level="80"><div class="skill-bar-head"><span>Edge TPU</span><span class="skill-pct">80%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
-        <div class="skill-bar" data-level="74"><div class="skill-bar-head"><span>TensorFlow</span><span class="skill-pct">74%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
-      </div>
-
-      <div class="skill-group">
-        <h3 class="skill-group-title">Tools &amp; Platforms</h3>
-        <div class="skill-bar" data-level="92"><div class="skill-bar-head"><span>Git</span><span class="skill-pct">92%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
-        <div class="skill-bar" data-level="93"><div class="skill-bar-head"><span>GitHub</span><span class="skill-pct">93%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
-        <div class="skill-bar" data-level="96"><div class="skill-bar-head"><span>VS Code</span><span class="skill-pct">96%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
-        <div class="skill-bar" data-level="85"><div class="skill-bar-head"><span>Google Colab</span><span class="skill-pct">85%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
-        <div class="skill-bar" data-level="81"><div class="skill-bar-head"><span>Raspberry Pi</span><span class="skill-pct">81%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="section" id="projects">
   <div class="container">
-    <div class="section-label"><span class="path">~/projects</span> // click a card to expand</div>
-    <h2>Selected work.</h2>
+    <div class="section-label reveal"><span class="path">~/projects</span> // click a card to expand</div>
+    <h2 class="reveal">Selected work.</h2>
 
     <div class="projects">
-      <div class="project-card"
+      <div class="project-card reveal"
            data-detail="A task management system for organizing assignments, tracking deadlines, and monitoring progress across student work. Includes assignment and deadline tracking, task progress monitoring, status updates and reminders, and a dashboard for workload visibility."
            data-repo="https://github.com/Darkaxis/20241_T145_COLLEGIANER-TASK-MANAGEMENT-SYSTEM">
         <div>
@@ -157,7 +120,7 @@
         <div class="project-arrow">→</div>
       </div>
 
-      <div class="project-card"
+      <div class="project-card reveal" style="transition-delay:0.1s"
            data-detail="A Laravel-based system for veterinary records, appointment workflows, and clinic management with secure access control. Includes authentication and authorization, pet/client/appointment management, clean admin workflows, and structured data access and reporting."
            data-repo="https://github.com/Sedrick010/Vet-Clinic-Management-System/tree/INTEGRATION">
         <div>
@@ -185,67 +148,101 @@
 
 <section class="section" id="systems">
   <div class="container">
-    <div class="section-label"><span class="path">~/systems</span> // click a diagram to enlarge</div>
-    <h2>System designs.</h2>
-    <p class="systems-note">A few client projects are under NDA, so the codebases aren't public. These are the system and architecture designs I can share — click any image for a closer look.</p>
+    <div class="section-label reveal"><span class="path">~/systems</span> // click a diagram to enlarge</div>
+    <h2 class="reveal">System designs.</h2>
+    <p class="systems-note reveal">A few client projects are under NDA, so the codebases aren't public. These are the system and architecture designs I can share — click any image for a closer look.</p>
 
     <div class="systems-grid">
-
-      <div class="system-card"
+      <div class="system-card reveal"
            data-images="diagrams/v1.png, diagrams/v2.png, diagrams/v3.png"
            data-title="Vet Clinic Management System — Laravel Architecture"
            data-caption="A Laravel-based system for veterinary records, appointment workflows, and clinic management with secure access control. Features: authentication and authorization · pet, client, and appointment management · clean admin workflows · structured data access and reporting.">
-        <img src="diagrams/v1.png" alt="Vet Clinic Management System Laravel architecture diagram">
+        <div class="system-card-img-wrap">
+          <img src="diagrams/v1.png" alt="Vet Clinic Management System Laravel architecture diagram">
+          <div class="system-view-overlay"><span>⊞ View gallery</span></div>
+          <div class="system-img-count">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            3 images
+          </div>
+        </div>
         <div class="system-info">
           <h3>Vet Clinic Management System</h3>
           <span class="system-tag">laravel · mysql · rbac</span>
         </div>
       </div>
 
-      <div class="system-card"
+      <div class="system-card reveal" style="transition-delay:0.1s"
            data-images="diagrams/amu1.png, diagrams/amu2.png, diagrams/amu3.png"
            data-title="Academic Mentoring System"
            data-caption="A system designed to support academic mentoring workflows — connecting students with mentors, tracking sessions, and monitoring academic progress.">
-        <img src="diagrams/amu1.png" alt="Academic Mentoring System design">
+        <div class="system-card-img-wrap">
+          <img src="diagrams/amu1.png" alt="Academic Mentoring System design">
+          <div class="system-view-overlay"><span>⊞ View gallery</span></div>
+          <div class="system-img-count">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            3 images
+          </div>
+        </div>
         <div class="system-info">
           <h3>Academic Mentoring System</h3>
           <span class="system-tag">system design</span>
         </div>
       </div>
 
-      <div class="system-card"
+      <div class="system-card reveal" style="transition-delay:0.2s"
            data-images="diagrams/apostle4.png, diagrams/apostle3.png, diagrams/apostle2.png, diagrams/apostle1.png"
            data-title="Life Plan Insurance System"
            data-caption="A system for managing life plan insurance policies, client records, and coverage tracking with structured data workflows.">
-        <img src="diagrams/apostle4.png" alt="Life Plan Insurance System design">
-        <div class="system-info">
+        <div class="system-card-img-wrap">
+          <img src="diagrams/apostle4.png" alt="Life Plan Insurance System design">
+          <div class="system-view-overlay"><span>⊞ View gallery</span></div>
+          <div class="system-img-count">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            4 images
+          </div>
+        </div>
+        <div class="system-info" data-category="design">
           <h3>Life Plan Insurance</h3>
           <span class="system-tag">system design</span>
         </div>
       </div>
 
-       <div class="system-card"
+      <div class="system-card reveal" style="transition-delay:0.3s"
+           data-category="iot"
            data-images="diagrams/crib.png, diagrams/crib1.png, diagrams/crib2.png, diagrams/crib3.png"
            data-title="Smart Baby Crib"
            data-caption="An IoT-based smart baby crib system that monitors a toddler's safety using AI-powered object detection and real-time notifications, helping caregivers prevent climb-out accidents and respond promptly to crying events.">
-        <img src="diagrams/crib.png" alt="Smart Baby Crib System design">
+        <div class="system-card-img-wrap">
+          <img src="diagrams/crib.png" alt="Smart Baby Crib System design">
+          <div class="system-view-overlay"><span>⊞ View gallery</span></div>
+          <div class="system-img-count">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            4 images
+          </div>
+        </div>
         <div class="system-info">
           <h3>Smart Baby Crib</h3>
-          <span class="system-tag">system design</span>
+          <span class="system-tag" style="color:var(--amber)">iot · yolov8 · raspberry pi</span>
         </div>
       </div>
 
-      <div class="system-card"
+      <div class="system-card reveal" style="transition-delay:0.4s"
            data-images="diagrams/c2.png, diagrams/c1.png, diagrams/c3.png, diagrams/c5.png"
            data-title="Collegianer Task Management System — React + Laravel Architecture"
            data-caption="A task management system for organizing assignments, tracking deadlines, and monitoring progress across student work. Features: assignment and deadline tracking · task progress monitoring · status updates and reminders · dashboard for workload visibility.">
-        <img src="diagrams/c2.png" alt="Collegianer Task Management System architecture diagram">
+        <div class="system-card-img-wrap">
+          <img src="diagrams/c2.png" alt="Collegianer Task Management System architecture diagram">
+          <div class="system-view-overlay"><span>⊞ View gallery</span></div>
+          <div class="system-img-count">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            4 images
+          </div>
+        </div>
         <div class="system-info">
           <h3>Collegianer Task Management System</h3>
           <span class="system-tag">react · laravel · mysql</span>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -272,11 +269,62 @@
   </div>
 </div>
 
+<section class="section" id="skills">
+  <div class="container">
+    <div class="section-label reveal"><span class="path">~/skills</span> // proficiency by category</div>
+    <h2 class="reveal">Skills.</h2>
+
+    <div class="skills-grid">
+      <div class="skill-group reveal">
+        <h3 class="skill-group-title">Programming Languages</h3>
+        <div class="skill-bar" data-level="92"><div class="skill-bar-head"><span>Python</span><span class="skill-pct">0%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="86"><div class="skill-bar-head"><span>PHP</span><span class="skill-pct">0%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="90"><div class="skill-bar-head"><span>JavaScript</span><span class="skill-pct">0%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="78"><div class="skill-bar-head"><span>Java</span><span class="skill-pct">0%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+      </div>
+
+      <div class="skill-group reveal" style="transition-delay:0.1s">
+        <h3 class="skill-group-title">Web Development</h3>
+        <div class="skill-bar" data-level="95"><div class="skill-bar-head"><span>HTML</span><span class="skill-pct">0%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="92"><div class="skill-bar-head"><span>CSS</span><span class="skill-pct">0%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="82"><div class="skill-bar-head"><span>Bootstrap</span><span class="skill-pct">0%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="78"><div class="skill-bar-head"><span>React</span><span class="skill-pct">0%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="89"><div class="skill-bar-head"><span>Laravel</span><span class="skill-pct">0%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+      </div>
+
+      <div class="skill-group reveal" style="transition-delay:0.2s">
+        <h3 class="skill-group-title">Databases</h3>
+        <div class="skill-bar" data-level="87"><div class="skill-bar-head"><span>MySQL</span><span class="skill-pct">0%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="75"><div class="skill-bar-head"><span>MongoDB</span><span class="skill-pct">0%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="78"><div class="skill-bar-head"><span>Firebase Firestore</span><span class="skill-pct">0%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+
+      </div>
+
+      <div class="skill-group reveal" style="transition-delay:0.3s">
+        <h3 class="skill-group-title">AI &amp; Computer Vision</h3>
+        <div class="skill-bar" data-level="88"><div class="skill-bar-head"><span>YOLOv8</span><span class="skill-pct">0%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="80"><div class="skill-bar-head"><span>Edge TPU</span><span class="skill-pct">0%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="74"><div class="skill-bar-head"><span>TensorFlow</span><span class="skill-pct">0%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+      </div>
+
+      <div class="skill-group reveal" style="transition-delay:0.4s">
+        <h3 class="skill-group-title">Tools &amp; Platforms</h3>
+        <div class="skill-bar" data-level="92"><div class="skill-bar-head"><span>Git</span><span class="skill-pct">0%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="93"><div class="skill-bar-head"><span>GitHub</span><span class="skill-pct">0%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="96"><div class="skill-bar-head"><span>VS Code</span><span class="skill-pct">0%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="85"><div class="skill-bar-head"><span>Google Colab</span><span class="skill-pct">0%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="81"><div class="skill-bar-head"><span>Raspberry Pi</span><span class="skill-pct">0%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="experience">
   <div class="container">
-    <div class="section-label"><span class="path">~/experience</span> // where I've worked</div>
-    <h2>Experience.</h2>
-    <div class="timeline">
+    <div class="section-label reveal"><span class="path">~/experience</span> // where I've worked</div>
+    <h2 class="reveal">Experience.</h2>
+    <div class="timeline reveal-stagger" id="timeline">
+      <div class="timeline-progress" id="timelineProgress"></div>
       <div class="tl-item">
         <div class="tl-meta">2025 — PRESENT</div>
         <h3>Freelance Full-Stack Developer</h3>
@@ -296,15 +344,85 @@
   </div>
 </section>
 
+<section class="section" id="certificates">
+  <div class="container">
+    <div class="section-label reveal"><span class="path">~/certificates</span> // click one to view</div>
+    <h2 class="reveal">Certificates &amp; trainings.</h2>
+    <p class="systems-note reveal">Replace the placeholders below with your own — swap the <code class="mono">data-image</code> path and edit the title, issuer, and date for each.</p>
+
+    <div class="certs-grid">
+      <div class="cert-card reveal"
+           data-image="diagrams/t1.png"
+           data-title="Certificate Title"
+           data-issuer="Issuing Organization"
+           data-date="2025">
+        <div class="cert-img-wrap">
+          <img src="diagrams/t1.png" alt="Certificate Title">
+          <div class="cert-view-overlay"><span>⊞ View</span></div>
+        </div>
+        <div class="cert-info">
+          <h3>CCNAv7: Switching, Routing, and Wireless Essentials</h3>
+          <span class="cert-meta">Issuing Organization · 2024</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal" style="transition-delay:0.06s"
+           data-image="diagrams/t2.png"
+           data-title="Certificate Title"
+           data-issuer="Issuing Organization"
+           data-date="2025">
+        <div class="cert-img-wrap">
+          <img src="diagrams/t2.png" alt="Certificate Title">
+          <div class="cert-view-overlay"><span>⊞ View</span></div>
+        </div>
+        <div class="cert-info">
+          <h3>CCNAv7: Introduction to Networks</h3>
+          <span class="cert-meta">Issuing Organization · 2024</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal" style="transition-delay:0.12s"
+           data-image="diagrams/t3.png"
+           data-title="Certificate Title"
+           data-issuer="Issuing Organization"
+           data-date="2025">
+        <div class="cert-img-wrap">
+          <img src="diagrams/t3.png" alt="Certificate Title">
+          <div class="cert-view-overlay"><span>⊞ View</span></div>
+        </div>
+        <div class="cert-info">
+          <h3>CCNA: Enterprise Networking, Security, and Automation</h3>
+          <span class="cert-meta">Issuing Organization · 2026</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal" style="transition-delay:0.18s"
+           data-image="diagrams/t4.png"
+           data-title="Certificate Title"
+           data-issuer="Issuing Organization"
+           data-date="2025">
+        <div class="cert-img-wrap">
+          <img src="diagrams/t4.png" alt="Certificate Title">
+          <div class="cert-view-overlay"><span>⊞ View</span></div>
+        </div>
+        <div class="cert-info">
+          <h3>Natural Language Processing</h3>
+          <span class="cert-meta">Issuing Organization · 2024</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="contact">
   <div class="container">
-    <div class="contact-box">
+    <div class="contact-box reveal">
       <h2>Let's build something.</h2>
       <p>Open to freelance projects, entry-level full-time roles, and the occasional weird idea.</p>
       <div class="contact-links">
-        <button class="btn btn-primary" id="copyEmailBtn">Copy email</button>
-        <a href="#" class="btn btn-ghost">GitHub</a>
-        <a href="#" class="btn btn-ghost">LinkedIn</a>
+        <button class="btn btn-primary magnetic" id="copyEmailBtn">Copy email</button>
+        <a href="#" class="btn btn-ghost magnetic">GitHub</a>
+        <a href="#" class="btn btn-ghost magnetic">LinkedIn</a>
       </div>
     </div>
   </div>
@@ -312,93 +430,272 @@
 
 <footer>
   built with html, css &amp; a little javascript — © 2026 yed francois y. cagang
+  <span class="footer-hint">psst — try <kbd>g</kbd> then <kbd>p</kbd> to jump to projects</span>
 </footer>
 
 <div class="copied-toast" id="copiedToast">✓ Copied yed.cagang@email.com to clipboard</div>
+<div class="nav-toast" id="navToast"></div>
 
 <script>
-  // mobile menu toggle
+  /* ---- ambient commit-graph background ---- */
+  (function(){
+    const graph = document.getElementById('commitGraph');
+    const cols = window.innerWidth < 880 ? 14 : 26;
+    const rows = 10;
+    graph.style.setProperty('--cg-cols', cols);
+    const cells = [];
+    for(let i = 0; i < cols * rows; i++){
+      const c = document.createElement('div');
+      c.className = 'cell';
+      graph.appendChild(c);
+      cells.push(c);
+    }
+    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      setInterval(() => {
+        const c = cells[Math.floor(Math.random() * cells.length)];
+        c.classList.remove('lit-1','lit-2','lit-3');
+        const lvl = 1 + Math.floor(Math.random() * 3);
+        c.classList.add('lit-' + lvl);
+        setTimeout(() => c.classList.remove('lit-' + lvl), 3000 + Math.random() * 2000);
+      }, 260);
+    }
+  })();
+
+  /* ---- scroll progress bar ---- */
+  const scrollProgress = document.getElementById('scrollProgress');
+  function updateScrollProgress(){
+    const h = document.documentElement;
+    const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    scrollProgress.style.width = scrolled + '%';
+  }
+  window.addEventListener('scroll', updateScrollProgress, { passive: true });
+  updateScrollProgress();
+
+  /* ---- cursor glow ---- */
+  const cursorGlow = document.getElementById('cursorGlow');
+  document.addEventListener('mousemove', e => {
+    cursorGlow.style.left = e.clientX + 'px';
+    cursorGlow.style.top  = e.clientY + 'px';
+    cursorGlow.style.opacity = '1';
+  });
+  document.addEventListener('mouseleave', () => cursorGlow.style.opacity = '0');
+
+  /* ---- nav scroll effects ---- */
+  const mainNav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    mainNav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  /* ---- active nav link on scroll ---- */
+  const sections = document.querySelectorAll('section[id]');
+  const navAnchors = document.querySelectorAll('.nav-links a');
+  const navObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        navAnchors.forEach(a => a.classList.remove('active'));
+        const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+        if(active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(s => navObserver.observe(s));
+
+  /* ---- mobile menu toggle ---- */
   const menuToggle = document.getElementById('menuToggle');
   const navLinks = document.getElementById('navLinks');
   menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
   navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
-  // typing effect in terminal
-  const fullText = "whoami";
+  /* ---- logo click spin easter egg ---- */
+  const logoMark = document.getElementById('logoMark');
+  logoMark.addEventListener('click', () => {
+    logoMark.classList.remove('spin');
+    void logoMark.offsetWidth;
+    logoMark.classList.add('spin');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  /* ---- scroll reveal ---- */
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-stagger').forEach(el => revealObserver.observe(el));
+
+  /* ---- terminal parallax tilt ---- */
+  const terminalEl = document.getElementById('terminalEl');
+  document.addEventListener('mousemove', e => {
+    if(!terminalEl) return;
+    const rect = terminalEl.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    const dx = (e.clientX - cx) / window.innerWidth;
+    const dy = (e.clientY - cy) / window.innerHeight;
+    terminalEl.style.transform = `perspective(800px) rotateY(${dx * 4}deg) rotateX(${-dy * 3}deg)`;
+  });
+  document.addEventListener('mouseleave', () => {
+    if(terminalEl) terminalEl.style.transform = '';
+  });
+
+  /* ---- magnetic buttons ---- */
+  document.querySelectorAll('.magnetic').forEach(btn => {
+    btn.addEventListener('mousemove', e => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      btn.style.transform = `translate(${x * 0.18}px, ${y * 0.35}px)`;
+    });
+    btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+  });
+
+  /* ---- subtle 3D tilt on project cards ---- */
+  document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const dx = (e.clientX - rect.left - rect.width / 2) / rect.width;
+      const dy = (e.clientY - rect.top - rect.height / 2) / rect.height;
+      card.style.transform = `perspective(1000px) rotateX(${-dy * 2.2}deg) rotateY(${dx * 2.2}deg) translateY(-3px)`;
+    });
+    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+  });
+
+  /* ---- typing effect (richer boot sequence) ---- */
+  const bootCommands = [
+    { text: "whoami", type: "cmd" },
+    { text: "yed francois y. cagang", type: "out" },
+    { text: "bsit graduate · full-stack developer", type: "out" },
+    { text: "git log --oneline -3", type: "cmd" },
+    { text: "a1c9f2e feat: ship vet clinic RBAC", type: "hash" },
+    { text: "e88d011 feat: yolov8 crib safety model", type: "hash" },
+    { text: "402bb6a feat: collegianer task dashboard", type: "hash" },
+    { text: "cat status.txt", type: "cmd" },
+    { text: "status: open to new opportunities ✓", type: "key" }
+  ];
   const typedEl = document.getElementById('typed-line');
   const terminalBody = document.getElementById('terminalBody');
-  let i = 0;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  function typeChar(){
-    if(i < fullText.length){
-      typedEl.textContent += fullText.charAt(i);
-      i++;
-      setTimeout(typeChar, 90);
+  function renderLine(cmdObj, container){
+    const div = document.createElement('div');
+    div.className = 'line ' + (cmdObj.type === 'cmd' ? '' : cmdObj.type);
+    if(cmdObj.type === 'cmd'){
+      div.innerHTML = '<span class="prompt">$</span> <span class="out"></span>';
+      container.appendChild(div);
+      return div.querySelector('.out');
     } else {
-      setTimeout(showOutput, 400);
+      div.textContent = cmdObj.text;
+      container.appendChild(div);
+      return null;
     }
   }
 
-  function showOutput(){
-    typedEl.style.borderRight = 'none';
-    const outputLines = [
-      { cls: 'out', text: 'yed francois y. cagang' },
-      { cls: 'out', text: 'bsit graduate · full-stack developer' },
-      { cls: 'out', text: 'stack: typescript, react, node, postgres' },
-      { cls: 'key', text: 'status: open to new opportunities ✓' }
-    ];
-    let delay = 200;
-    outputLines.forEach(line => {
-      setTimeout(() => {
-        const div = document.createElement('div');
-        div.className = 'line ' + line.cls;
-        div.textContent = line.text;
-        terminalBody.appendChild(div);
-      }, delay);
-      delay += 350;
-    });
+  function typeSequence(index){
+    if(index >= bootCommands.length) return;
+    const cmdObj = bootCommands[index];
+    if(index === 0){
+      // first command types into the initial static line
+      let i = 0;
+      function tc(){
+        if(i < cmdObj.text.length){
+          typedEl.textContent += cmdObj.text.charAt(i);
+          i++;
+          setTimeout(tc, 85);
+        } else {
+          typedEl.style.borderRight = 'none';
+          setTimeout(() => typeSequence(index + 1), 300);
+        }
+      }
+      tc();
+      return;
+    }
+    if(cmdObj.type === 'cmd'){
+      const target = renderLine(cmdObj, terminalBody);
+      let i = 0;
+      function tc(){
+        if(i < cmdObj.text.length){
+          target.textContent += cmdObj.text.charAt(i);
+          i++;
+          setTimeout(tc, 55);
+        } else {
+          setTimeout(() => typeSequence(index + 1), 220);
+        }
+      }
+      tc();
+    } else {
+      renderLine(cmdObj, terminalBody);
+      setTimeout(() => typeSequence(index + 1), 280);
+    }
   }
 
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    typedEl.textContent = fullText;
-    showOutput();
+  if(reduceMotion){
+    typedEl.textContent = bootCommands[0].text;
+    bootCommands.slice(1).forEach(c => renderLine(c, terminalBody));
   } else {
-    typeChar();
+    typeSequence(0);
   }
 
-  // skill bar animation on scroll
-  const skillObserver = new IntersectionObserver((entries) => {
+  /* ---- skill bar animation with animated counters ---- */
+  const skillObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if(entry.isIntersecting){
-        entry.target.querySelectorAll('.skill-bar').forEach(bar => {
+        entry.target.querySelectorAll('.skill-bar').forEach((bar, idx) => {
           const fill = bar.querySelector('.skill-fill');
-          const level = bar.dataset.level;
-          setTimeout(() => { fill.style.width = level + '%'; }, 100);
+          const pctEl = bar.querySelector('.skill-pct');
+          const level = parseInt(bar.dataset.level, 10);
+          setTimeout(() => {
+            fill.style.width = level + '%';
+            bar.classList.add('animated');
+            if(reduceMotion){
+              pctEl.textContent = level + '%';
+              return;
+            }
+            const start = performance.now();
+            const duration = 1100;
+            function tick(now){
+              const t = Math.min(1, (now - start) / duration);
+              const eased = 1 - Math.pow(1 - t, 3);
+              pctEl.textContent = Math.round(eased * level) + '%';
+              if(t < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+          }, idx * 80);
         });
         skillObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.skill-group').forEach(g => skillObserver.observe(g));
 
-  const skillsGrid = document.querySelector('.skills-grid');
-  if(skillsGrid) skillObserver.observe(skillsGrid);
+  /* ---- timeline scroll progress ---- */
+  const timelineEl = document.getElementById('timeline');
+  const timelineProgress = document.getElementById('timelineProgress');
+  function updateTimelineProgress(){
+    if(!timelineEl) return;
+    const rect = timelineEl.getBoundingClientRect();
+    const vh = window.innerHeight;
+    const total = rect.height;
+    let filled = (vh * 0.75 - rect.top);
+    filled = Math.max(0, Math.min(total, filled));
+    timelineProgress.style.height = (filled / total * 100) + '%';
+  }
+  window.addEventListener('scroll', updateTimelineProgress, { passive: true });
+  updateTimelineProgress();
 
-  // expandable project cards
+  /* ---- expandable project cards ---- */
   document.querySelectorAll('.project-card').forEach(card => {
     const repoLink = card.querySelector('.repo-link');
     if(repoLink && card.dataset.repo){
       repoLink.href = card.dataset.repo;
-      // clicking the GitHub link should open the repo, not toggle the card
       repoLink.addEventListener('click', e => e.stopPropagation());
     }
-
     card.addEventListener('click', () => {
-      const detail = card.querySelector('.project-detail');
       const detailText = card.querySelector('.detail-text');
       const wasOpen = card.classList.contains('open');
-      document.querySelectorAll('.project-card.open').forEach(c => {
-        c.classList.remove('open');
-      });
+      document.querySelectorAll('.project-card.open').forEach(c => c.classList.remove('open'));
       if(!wasOpen){
         card.classList.add('open');
         detailText.textContent = card.dataset.detail;
@@ -406,7 +703,7 @@
     });
   });
 
-  // system design lightbox carousel
+  /* ---- system design lightbox carousel ---- */
   const lightbox = document.getElementById('lightbox');
   const lightboxTitle = document.getElementById('lightboxTitle');
   const lightboxCaption = document.getElementById('lightboxCaption');
@@ -416,7 +713,6 @@
   const carouselCounter = document.getElementById('carouselCounter');
   const carouselPrev = document.getElementById('carouselPrev');
   const carouselNext = document.getElementById('carouselNext');
-
   let currentIndex = 0;
   let images = [];
 
@@ -429,7 +725,6 @@
       img.src = src.trim();
       img.alt = 'System design image ' + (i + 1);
       carouselTrack.appendChild(img);
-
       const dot = document.createElement('button');
       dot.className = 'carousel-dot';
       dot.setAttribute('aria-label', 'Go to image ' + (i + 1));
@@ -442,9 +737,7 @@
   function goTo(index){
     currentIndex = index;
     carouselTrack.style.transform = `translateX(-${index * 100}%)`;
-    document.querySelectorAll('.carousel-dot').forEach((d, i) => {
-      d.classList.toggle('active', i === index);
-    });
+    document.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('active', i === index));
     carouselCounter.textContent = images.length > 1 ? `${index + 1} / ${images.length}` : '';
     carouselPrev.style.display = images.length > 1 ? 'flex' : 'none';
     carouselNext.style.display = images.length > 1 ? 'flex' : 'none';
@@ -453,6 +746,14 @@
 
   carouselPrev.addEventListener('click', () => goTo((currentIndex - 1 + images.length) % images.length));
   carouselNext.addEventListener('click', () => goTo((currentIndex + 1) % images.length));
+
+  /* swipe support */
+  let touchStartX = 0;
+  carouselTrack.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  carouselTrack.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if(Math.abs(diff) > 40) goTo(diff > 0 ? (currentIndex + 1) % images.length : (currentIndex - 1 + images.length) % images.length);
+  });
 
   document.querySelectorAll('.system-card').forEach(card => {
     card.addEventListener('click', () => {
@@ -465,7 +766,16 @@
     });
   });
 
-  // keyboard navigation
+  document.querySelectorAll('.cert-card').forEach(card => {
+    card.addEventListener('click', () => {
+      buildCarousel([card.dataset.image]);
+      lightboxTitle.textContent = card.dataset.title;
+      lightboxCaption.textContent = `${card.dataset.issuer} · ${card.dataset.date}`;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
   document.addEventListener('keydown', e => {
     if(!lightbox.classList.contains('open')) return;
     if(e.key === 'Escape') closeLightbox();
@@ -480,13 +790,53 @@
   lightboxClose.addEventListener('click', closeLightbox);
   lightbox.addEventListener('click', e => { if(e.target === lightbox) closeLightbox(); });
 
-  // copy email button
+  /* ---- copy email ---- */
   document.getElementById('copyEmailBtn').addEventListener('click', () => {
     const email = 'yed.cagang@email.com';
     navigator.clipboard.writeText(email).catch(() => {});
     const toast = document.getElementById('copiedToast');
     toast.classList.add('show');
     setTimeout(() => toast.classList.remove('show'), 2200);
+  });
+
+  /* ---- "g then key" keyboard nav easter egg (github-style) ---- */
+  const navToast = document.getElementById('navToast');
+  const jumpMap = {
+    a: { id: 'about', label: 'about' },
+    p: { id: 'projects', label: 'projects' },
+    y: { id: 'systems', label: 'systems' },
+    s: { id: 'skills', label: 'skills' },
+    e: { id: 'experience', label: 'experience' },
+    t: { id: 'certificates', label: 'certificates' },
+    c: { id: 'contact', label: 'contact' }
+  };
+  let waitingForG = false;
+  let gTimeout = null;
+  document.addEventListener('keydown', e => {
+    const tag = (e.target.tagName || '').toLowerCase();
+    if(tag === 'input' || tag === 'textarea' || e.metaKey || e.ctrlKey || e.altKey) return;
+    if(lightbox.classList.contains('open')) return;
+
+    if(e.key === 'g' || e.key === 'G'){
+      waitingForG = true;
+      clearTimeout(gTimeout);
+      gTimeout = setTimeout(() => { waitingForG = false; }, 1200);
+      return;
+    }
+    if(waitingForG && jumpMap[e.key]){
+      waitingForG = false;
+      clearTimeout(gTimeout);
+      const target = jumpMap[e.key];
+      const el = document.getElementById(target.id);
+      if(el){
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        navToast.textContent = '→ ' + target.label;
+        navToast.classList.add('show');
+        setTimeout(() => navToast.classList.remove('show'), 1400);
+      }
+    } else {
+      waitingForG = false;
+    }
   });
 </script>
 
