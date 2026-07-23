@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yed Francois Y. Cagang — Full-Stack Developer</title>
+  <title>Yed Francois Y. Cagang — Developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
@@ -39,10 +39,10 @@
   <div class="container hero-grid">
     <div>
       <div class="eyebrow"><span class="dot"></span> OPEN TO NEW OPPORTUNITIES</div>
-      <h1>Fresh graduate.<br>Building things that <span class="accent">already ship.</span></h1>
-      <p class="lede">I'm Yed Francois Y. Cagang, a BSIT graduate and full-stack web developer who's been freelancing and building real projects long before the diploma caught up.</p>
+      <h1>Developer.<br>Building things that <span class="accent">already ship.</span></h1>
+      <p class="lede">I'm Yed Francois Y. Cagang, a BSIT graduate and web developer with freelancing experience and real projects that ship.</p>
       <div class="hero-cta">
-        <a href="#projects" class="btn btn-primary magnetic">View projects</a>
+        <a href="cv.pdf" class="btn btn-primary magnetic" target="_blank" rel="noopener">View Resume</a>
         <a href="#contact" class="btn btn-ghost magnetic">Get in touch</a>
       </div>
     </div>
@@ -316,6 +316,11 @@
         <div class="skill-bar" data-level="85"><div class="skill-bar-head"><span>Google Colab</span><span class="skill-pct">0%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
         <div class="skill-bar" data-level="81"><div class="skill-bar-head"><span>Raspberry Pi</span><span class="skill-pct">0%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
       </div>
+      <div class="skill-group reveal" style="transition-delay:0.5s">
+        <h3 class="skill-group-title">Learning</h3>
+        <div class="skill-bar learning" data-level="32"><div class="skill-bar-head"><span>n8n</span><span class="skill-pct">learning</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar learning" data-level="28"><div class="skill-bar-head"><span>Shopify</span><span class="skill-pct">learning</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -328,13 +333,13 @@
       <div class="timeline-progress" id="timelineProgress"></div>
       <div class="tl-item">
         <div class="tl-meta">2025 — PRESENT</div>
-        <h3>Freelance Full-Stack Developer</h3>
+        <h3>Freelance Developer</h3>
         <p>Working directly with small businesses and startups to design and build web applications — from initial scoping calls to deployment. Handled everything from database design to client communication on each engagement.</p>
       </div>
       <div class="tl-item">
-        <div class="tl-meta">2024 — 2025</div>
+        <div class="tl-meta">2024 — 2026</div>
         <h3>Capstone Project Lead, BSIT Program</h3>
-        <p>Led a 4-person team building a full-stack web system as our thesis project — from requirements gathering to final defense. Took ownership of the backend architecture and database design.</p>
+        <p>Led a 4-person team building a web system as our thesis project — from requirements gathering to final defense. Took ownership of the backend architecture and database design.</p>
       </div>
       <div class="tl-item">
         <div class="tl-meta">2022 — 2025</div>
@@ -349,7 +354,7 @@
   <div class="container">
     <div class="section-label reveal"><span class="path">~/certificates</span> // click one to view</div>
     <h2 class="reveal">Certificates &amp; trainings.</h2>
-    <p class="systems-note reveal">Replace the placeholders below with your own — swap the <code class="mono">data-image</code> path and edit the title, issuer, and date for each.</p>
+    <p class="systems-note reveal">A collection of certifications and training programs that demonstrate my commitment to continuous learning, professional growth, and keeping my skills up to date with modern technologies and industry best practices.</p>
 
     <div class="certs-grid">
       <div class="cert-card reveal"
@@ -417,13 +422,12 @@
 
 <section class="section" id="contact">
   <div class="container">
-    <div class="contact-box reveal">
-      <h2>Let's build something.</h2>
-      <p>Open to freelance projects, entry-level full-time roles, and the occasional weird idea.</p>
+      <div class="contact-box reveal">
+      <h2>Let's collaborate.</h2>
+      <p>I am available for freelance, contract, and full-time opportunities. For project inquiries or to request my resume, please contact me by email or via GitHub.</p>
       <div class="contact-links">
         <button class="btn btn-primary magnetic" id="copyEmailBtn">Copy email</button>
         <a href="#" class="btn btn-ghost magnetic">GitHub</a>
-        <a href="#" class="btn btn-ghost magnetic">LinkedIn</a>
       </div>
     </div>
   </div>
@@ -568,7 +572,7 @@
   const bootCommands = [
     { text: "whoami", type: "cmd" },
     { text: "yed francois y. cagang", type: "out" },
-    { text: "bsit graduate · full-stack developer", type: "out" },
+    { text: "bsit graduate · developer", type: "out" },
     { text: "git log --oneline -3", type: "cmd" },
     { text: "a1c9f2e feat: ship vet clinic RBAC", type: "hash" },
     { text: "e88d011 feat: yolov8 crib safety model", type: "hash" },
@@ -647,7 +651,14 @@
           const fill = bar.querySelector('.skill-fill');
           const pctEl = bar.querySelector('.skill-pct');
           const level = parseInt(bar.dataset.level, 10);
+          const isLearning = bar.classList.contains('learning');
           setTimeout(() => {
+            if(isLearning){
+              fill.style.width = '6%';
+              bar.classList.add('animated');
+              pctEl.textContent = 'learning';
+              return;
+            }
             fill.style.width = level + '%';
             bar.classList.add('animated');
             if(reduceMotion){
