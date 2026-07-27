@@ -142,6 +142,32 @@
         </div>
         <div class="project-arrow">→</div>
       </div>
+
+      <div class="project-card reveal" style="transition-delay:0.2s"
+           data-detail="An automation workflow built with n8n that connects expense-related tools and AI services to streamline tracking, categorization, and reporting. The project highlights practical workflow automation, API integration, and problem-solving in a personal productivity setup."
+           data-repo="https://github.com/Cagang18/AI-Expense-Tracker-Automation.git"
+           data-demo="https://www.loom.com/share/1951eb6cad0a4e159f00f57d43f3ae0d">
+        <div>
+          <div class="project-top">
+            <h3>AI Expense Tracker Automation</h3>
+            <span class="project-status">Personal Project</span>
+          </div>
+          <p>An n8n-based automation project focused on simplifying expense tracking with AI-assisted categorization and connected workflows.</p>
+          <div class="project-tags">
+            <span class="tag">n8n</span>
+            <span class="tag">automation</span>
+            <span class="tag">ai</span>
+            <span class="tag">workflow</span>
+          </div>
+          <div class="project-detail">
+            <p class="detail-text"></p>
+            <a class="repo-link demo-link" href="#" target="_blank" rel="noopener">Watch Loom demo →</a>
+            <p class="detail-password">Access password: password</p>
+            <a class="repo-link" href="#" target="_blank" rel="noopener">View on GitHub →</a>
+          </div>
+        </div>
+        <div class="project-arrow">→</div>
+      </div>
     </div>
   </div>
 </section>
@@ -154,7 +180,27 @@
 
     <div class="systems-grid">
 
-      <div class="system-card reveal" style="transition-delay:0.1s"
+      <div class="system-card reveal featured" style="transition-delay:0.1s"
+           data-images="diagrams/n1.png, diagrams/n2.png, diagrams/n3.png, diagrams/n4.png"
+           data-title="AI Expense Tracker Automation"
+           data-caption="A personal n8n automation project that connects expense tracking tools and AI services to streamline categorization, workflow logic, and reporting. Includes a Loom demo link and access password for the walkthrough."
+           data-demo-link="https://www.loom.com/share/1951eb6cad0a4e159f00f57d43f3ae0d"
+           data-demo-password="password">
+        <div class="system-card-img-wrap">
+          <img src="diagrams/n1.png" alt="AI Expense Tracker Automation screenshots">
+          <div class="system-view-overlay"><span>⊞ View gallery</span></div>
+          <div class="system-img-count">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            4 images
+          </div>
+        </div>
+        <div class="system-info">
+          <h3>AI Expense Tracker Automation</h3>
+          <span class="system-tag">n8n · automation · ai</span>
+        </div>
+      </div>
+
+      <div class="system-card reveal" style="transition-delay:0.15s"
            data-images="diagrams/amu1.png, diagrams/amu2.png, diagrams/amu3.png"
            data-title="Academic Mentoring System"
            data-caption="A system designed to support academic mentoring workflows — connecting students with mentors, tracking sessions, and monitoring academic progress.">
@@ -263,6 +309,7 @@
       <div class="lightbox-text">
         <h3 id="lightboxTitle"></h3>
         <p id="lightboxCaption"></p>
+        <div class="lightbox-links" id="lightboxLinks"></div>
       </div>
       <div class="carousel-counter" id="carouselCounter"></div>
     </div>
@@ -700,9 +747,14 @@
   /* ---- expandable project cards ---- */
   document.querySelectorAll('.project-card').forEach(card => {
     const repoLink = card.querySelector('.repo-link');
+    const demoLink = card.querySelector('.demo-link');
     if(repoLink && card.dataset.repo){
       repoLink.href = card.dataset.repo;
       repoLink.addEventListener('click', e => e.stopPropagation());
+    }
+    if(demoLink && card.dataset.demo){
+      demoLink.href = card.dataset.demo;
+      demoLink.addEventListener('click', e => e.stopPropagation());
     }
     card.addEventListener('click', () => {
       const detailText = card.querySelector('.detail-text');
@@ -719,6 +771,7 @@
   const lightbox = document.getElementById('lightbox');
   const lightboxTitle = document.getElementById('lightboxTitle');
   const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxLinks = document.getElementById('lightboxLinks');
   const lightboxClose = document.getElementById('lightboxClose');
   const carouselTrack = document.getElementById('carouselTrack');
   const carouselDots = document.getElementById('carouselDots');
@@ -767,12 +820,33 @@
     if(Math.abs(diff) > 40) goTo(diff > 0 ? (currentIndex + 1) % images.length : (currentIndex - 1 + images.length) % images.length);
   });
 
+  // set overlay labels and demo affordance for system cards
+  document.querySelectorAll('.system-card').forEach(card => {
+    const overlaySpan = card.querySelector('.system-view-overlay span');
+    if(overlaySpan){
+      if(card.dataset.demoLink){
+        overlaySpan.textContent = '▶ View demo & screenshots';
+        card.classList.add('has-demo');
+      } else {
+        overlaySpan.textContent = '⊞ View gallery';
+      }
+    }
+  });
+
+  // open lightbox and populate demo link/password when available
   document.querySelectorAll('.system-card').forEach(card => {
     card.addEventListener('click', () => {
-      const imgs = card.dataset.images.split(',');
+      const imgs = (card.dataset.images || '').split(',').map(s => s.trim()).filter(Boolean);
+      const demoLink = card.dataset.demoLink || '';
+      const demoPassword = card.dataset.demoPassword || '';
       buildCarousel(imgs);
-      lightboxTitle.textContent = card.dataset.title;
-      lightboxCaption.textContent = card.dataset.caption;
+      lightboxTitle.textContent = card.dataset.title || '';
+      lightboxCaption.textContent = card.dataset.caption || '';
+      if(demoLink){
+        lightboxLinks.innerHTML = `\n          <a class="lightbox-btn" href="${demoLink}" target="_blank" rel="noopener">Watch Loom demo</a>\n          <div class="lightbox-pass">Access password: <strong>${demoPassword}</strong></div>\n        `;
+      } else {
+        lightboxLinks.innerHTML = '';
+      }
       lightbox.classList.add('open');
       document.body.style.overflow = 'hidden';
     });
