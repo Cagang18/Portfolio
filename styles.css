@@ -633,23 +633,7 @@ nav.scrolled{
   flex-direction: column;
 }
 .system-card.featured{
-  grid-column: span 1;
-  display: flex;
-  flex-direction: column;
-}
-.system-card.featured .system-card-img-wrap{
-  aspect-ratio: 4 / 3;
-  min-height: auto;
-}
-.system-card.featured .system-info{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 20px 22px;
-}
-.system-card.featured .system-info h3{
-  font-size: 16px;
-  margin-bottom: 8px;
+  /* featured card is uniform with other cards */
 }
 .system-card:hover{
   border-color: var(--mint);
