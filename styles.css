@@ -616,6 +616,19 @@ nav.scrolled{
   max-width: 640px;
   margin-bottom: 36px;
 }
+.system-group + .system-group{ margin-top: 64px; }
+.system-group-heading{ margin-bottom: 22px; }
+.system-group-kicker{
+  display: block;
+  margin-bottom: 8px;
+  color: var(--mint);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.system-group-heading h3{ font-size: 26px; margin-bottom: 6px; }
+.system-group-heading p{ color: var(--muted); font-size: 14px; max-width: 620px; }
 .systems-grid{
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
