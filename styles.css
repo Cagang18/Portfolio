@@ -718,12 +718,24 @@ nav.scrolled{
   border-left: 3px solid var(--mint);
   position: relative;
   flex: 1;
+  width: 100%;
+  box-sizing: border-box;
 }
-.system-info h3{ font-size: 15.5px; margin-bottom: 7px; }
+.system-info h3{ 
+  font-size: 15.5px; 
+  margin-bottom: 7px; 
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
 .system-tag{
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
   color: var(--mint);
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 /* visual indicator for cards that include a demo */
@@ -1043,8 +1055,19 @@ footer{
   align-items: flex-start;
   gap: 16px;
 }
+.lightbox-text{
+  flex: 1 1 auto;
+  min-width: 0;
+}
 .lightbox-text h3{ font-size: 17px; margin-bottom: 6px; }
-.lightbox-text p{ color: var(--muted); font-size: 13.5px; max-width: 640px; }
+.lightbox-text p{ 
+  color: var(--muted); 
+  font-size: 13.5px; 
+  max-width: 100%;
+  width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
 .carousel-counter{
   font-family: 'JetBrains Mono', monospace;
   font-size: 12px;
